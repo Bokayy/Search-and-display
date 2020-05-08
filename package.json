@@ -1,0 +1,41 @@
+{
+  "name": "pk-component-pkc-name",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build && json-dir-listing ./dist -o report.json -b ./dist",
+    "post-build": "unset GIT_DIR && cd dist && git add *.* && git add js/* && git add css/*"
+  },
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "pk-components-common": "git+ssh://git@git.profil-klett.hr:2288/profil/pk-components-common.git",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "fibers": "^3.1.1",
+    "json-dir-listing": "^0.2.1",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.16.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "wrapper-webpack-plugin": "^2.1.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "ie 11-12"
+  ],
+  "pre-commit": [
+    "build",
+    "post-build"
+  ]
+}

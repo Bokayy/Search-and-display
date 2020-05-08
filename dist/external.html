@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/favicon.ico><title>pkc-name</title><link rel=stylesheet type=text/css href=https://api.izzi.hr/profil/dist/izzi/css/style.css><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet><script src=https://cdn.jsdelivr.net/npm/vue/dist/vue.js></script><script src=https://unpkg.com/vue-i18n@8.8.1/dist/vue-i18n.js></script><script>// translations for common components. available on platform
+      // you should never need to edit this
+      window['pkc-locales'] = {
+        "hr": {
+          "pkc": {
+            "header": {
+              "initialize": "Pokreni",
+              "mute": "Utišaj",
+              "help": "Pomoć",
+              "fullscreen": "Uvećaj"
+            },
+            "footer": {
+              "help": "Pomoć",
+              "solution": "Rješenja",
+              "check": "Provjeri",
+              "correct": "Točno",
+              "incorrect": "Netočno",
+              "tryAgain": "Pokušaj ponovo",
+              "close": "Zatvori",
+              "showActions": "Prikaži dodatne akcije"
+            },
+            "intStatus": {
+              "correctAnswer": "Točno rješenje",
+              "wrongAnswer": "Netočno rješenje",
+              "showAnswer": "Prikaži rješenja"
+            },
+            "finish": {
+              "bravo": "Bravo!"
+            }
+          }
+        },
+        "en": {
+          "pkc": {
+            "header": {
+              "initialize": "Start",
+              "mute": "Mute",
+              "help": "Help",
+              "fullscreen": "Fullscreen"
+            },
+            "footer": {
+              "help": "Help",
+              "solution": "Show solution",
+              "check": "Check",
+              "correct": "Correct",
+              "incorrect": "Incorrect",
+              "tryAgain": "Try again",
+              "close": "Close",
+              "showActions": "Show actions"
+            },
+            "intStatus": {
+              "correctAnswer": "Correct answer",
+              "wrongAnswer": "Wrong answer",
+              "showAnswer": "Show answer"
+            },
+            "finish": {
+              "bravo": "Bravo!"
+            }
+          }
+        },
+        "bg": {
+          "pkc": {
+            "header": {
+              "initialize": "Начало",
+              "mute": "Без звук",
+              "help": "Помощ",
+              "fullscreen": "Цял екран"
+            },
+            "footer": {
+              "help": "Помощ",
+              "solution": "Покажи решение",
+              "check": "Проверка",
+              "correct": "Правилно",
+              "incorrect": "Грешка!",
+              "tryAgain": "Опитай пак",
+              "close": "Затвори",
+              "showActions": "Помощ"
+            },
+            "intStatus": {
+              "correctAnswer": "Вярно!",
+              "wrongAnswer": "Грешка!",
+              "showAnswer": "Решение"
+            },
+            "finish": {
+              "bravo": "Браво!"
+            }
+          }
+        }
+      }
+      // /translations for common components
+      
+      Vue.component('pkc-name', window['pkc-config'])
+
+      document.addEventListener('DOMContentLoaded', () => {
+        var i18n = new VueI18n({
+          locale: 'hr', // set locale
+          messages: window['pkc-locales']
+        })
+
+        var app = new Vue({
+          el: '#app-wrap',
+          data: {
+            message: 'Hello Vue!'
+          },
+          i18n: i18n
+        })
+      })</script><link href=/css/external.css rel=preload as=style><link href=/js/external.js rel=preload as=script><link href=/css/external.css rel=stylesheet></head><body><div class=site-wrapper><section id=main class="tpl-jedinica tpl-dos"><div class=content-x><div class=container><div class=row><div class=col-12><div class="app-wrap block-layout--default"><div id=app-wrap><pkc-name></pkc-name></div></div></div></div></div></div></section></div><script src=/js/external.js></script></body></html>
