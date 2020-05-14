@@ -39,7 +39,7 @@ import scorer from '../node_modules/pk-components-common/mixins/scorer.js';
 import analytics from '../node_modules/pk-components-common/mixins/analytics.js';
 import IntHeader from '../node_modules/pk-components-common/components/int-header.vue';
 import IntFooter from '../node_modules/pk-components-common/components/int-footer.vue';
-import translations from './translations.js';
+import messages from './translations/messages.js';
 
 export default {
   name: 'pkc-name',
@@ -49,7 +49,7 @@ export default {
     'block-id': String
   },
   i18n: {
-    messages: translations,
+    messages: messages,
   },
   components: {
     'int-header': IntHeader,
