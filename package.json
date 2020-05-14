@@ -1,7 +1,9 @@
 {
   "name": "pkc-name",
   "author": "Mladen Panic <mladen.panic@profil-klett.hr>",
-  "keywords": ["izzi"],
+  "keywords": [
+    "izzi"
+  ],
   "version": "0.2.0",
   "private": true,
   "scripts": {
@@ -13,7 +15,7 @@
   "dependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
-    "pk-components-common": "git+ssh://git@git.profil-klett.hr:2288/profil/pk-components-common.git",
+    "pkc-common": "git+ssh://git@github.com/profil-klett/pkc-common.git",
     "vue": "^2.6.11"
   },
   "devDependencies": {

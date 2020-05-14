@@ -33,12 +33,12 @@
 </template>
 
 <script>
-import configLoader from '../node_modules/pk-components-common/mixins/config-loader.js';
-import commonToggles from '../node_modules/pk-components-common/mixins/common-toggles.js';
-import scorer from '../node_modules/pk-components-common/mixins/scorer.js';
-import analytics from '../node_modules/pk-components-common/mixins/analytics.js';
-import IntHeader from '../node_modules/pk-components-common/components/int-header.vue';
-import IntFooter from '../node_modules/pk-components-common/components/int-footer.vue';
+import configLoader from '../node_modules/pkc-common/mixins/config-loader.js';
+import commonToggles from '../node_modules/pkc-common/mixins/common-toggles.js';
+import scorer from '../node_modules/pkc-common/mixins/scorer.js';
+import analytics from '../node_modules/pkc-common/mixins/analytics.js';
+import IntHeader from '../node_modules/pkc-common/components/int-header.vue';
+import IntFooter from '../node_modules/pkc-common/components/int-footer.vue';
 import messages from './messages.js';
 
 export default {
@@ -95,10 +95,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../node_modules/pkc-common/styles/_variables.scss";
+
 .pkc-name {
 
   h1 {
-    color: rebeccapurple;
+    color: $blue;
   }
 
 }

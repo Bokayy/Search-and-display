@@ -64,7 +64,7 @@ Most components should have the following structure to display properly in fulls
 Root component element should have mandatory classes `int` and `pkc-name`. Also `common-toggles.js` mixin contains `commonElClass` computed prop which provides classes for fullscreen toggling and splash screen toggling. This is mandatory.
 
 ### Dark mode
-Dark mode is enabled on platform via `dark-mode` class on `body`. Make sure to test component in such situation. Use colors defined in `_variables.scss` in commons repo, namely: `$black`, `$off-black`, `$border-black`. These should be enough to make the component darker.
+Dark mode is enabled on platform via `dark-mode` class on `body`. Make sure to test component in such situation. Use colors defined in `_variables.scss` in `pkc-common`, namely: `$black`, `$off-black`, `$border-black`. These should be enough to make the component darker.
 
 ### Assets
 Place all assets which are mandatory for component to work in `/src/assets`. Put all assets used for testing/dev purposes in `/public/static`.
