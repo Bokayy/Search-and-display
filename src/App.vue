@@ -95,5 +95,11 @@ export default {
 </script>
 
 <style lang="scss">
+.pkc-name {
 
+  h1 {
+    color: rebeccapurple;
+  }
+
+}
 </style>

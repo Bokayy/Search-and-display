@@ -1,17 +1,19 @@
 {
   "name": "pkc-name",
+  "author": "Mladen Panic <mladen.panic@profil-klett.hr>",
+  "keywords": ["izzi"],
   "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build && json-dir-listing ./dist -o report.json -b ./dist",
+    "build": "vue-cli-service build && npm run translations",
+    "translations": "json-dir-listing ./src/translations -o translations.json && move-file ./src/translations/translations.json ./dist/translations.json",
     "post-build": "unset GIT_DIR && cd dist && git add *.* && git add js/* && git add css/*"
   },
   "dependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "pk-components-common": "git+ssh://git@git.profil-klett.hr:2288/profil/pk-components-common.git",
-    "pkc-video-player": "git+ssh://git@github.com/profil-klett/video-player.git",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "pre-commit": "^1.2.2",
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
+    "move-file-cli": "^1.0.0",
     "vue-template-compiler": "^2.6.11",
     "wrapper-webpack-plugin": "^2.1.0"
   },

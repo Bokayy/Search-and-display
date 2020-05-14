@@ -17,7 +17,9 @@ npm run build
 ```
 
 ## Before you begin
-Find `pkc-name` in files and replace with your desired component name, always keep `pkc-` prefix in component name to avoid naming collisions.
+* Find `pkc-name` in files and replace with your desired component name, always keep `pkc-` prefix in component name to avoid naming collisions.
+* Update author field in package.json. 
+* Enter project name for which this component is developed in keywords in package.json. We want to keep track of components created for IZZI, Carnet, PYP etc...
 
 ## How this works
 
@@ -27,6 +29,15 @@ Vue is not included in default build (configured in `main.js`), it is available 
 
 ### Standalone build
 Some components are available in Shell, we might need them in our component, eg. `pkc-video-player` but we do not want them included in the final bundle. Import such components in `main.js` and register as global Vue components. Do not import them in `izzi.js`. `dist/standalone.js` will include these components and that bundle can be used outside of Shell.
+
+### Possible dependencies
+Most components will need to use `pkc-common`, it is included in package.json by default. It contains some often used components and shared component styles etc. Very rarely will you not need to use it.
+
+Other possible dependencies include:
+```
+"pkc-audio-player": "git+ssh://git@github.com/profil-klett/audio-player.git"
+"pkc-video-player": "git+ssh://git@github.com/profil-klett/video-player.git"
+```
 
 ## Avoiding side effects. Read carefully!
 * Always nest all component styles under one main selector which matches `.pkc-name` to avoid global CSS scope pollution.
