@@ -88,6 +88,8 @@ If you need to import CSS from `node_modules` into SCSS, prefix the path with `~
 Localisation is done with https://kazupon.github.io/vue-i18n/ and uses https://github.com/kazupon/vue-i18n-loader
 Check out `src/translations` for examples. Currently we support Croatia, English, Bulgarian and Serbian.
 
+__Delete translations for languages we still do not have and remove imports from `messages.js`.__
+
 ### Deploying
 `pre-commit` git hook will run and build the project. You can avoid this by using `git commit -n` but only do this if you've not changed src files or you've run `npm run build` yourself, otherwise latest version will not be deployed after push.
 
@@ -117,4 +119,4 @@ Check out `<true-false>` component as the simplest example of a component which 
 ## Common issues
 
 ### KaTeX
-If using `{{foobar}}` instead of `v-text` or `v-html` [KaTeX](https://katex.org/) will probably cause this part of the template to never update. Some publications use KaTex for latex rendering. To avoid these issues put `js-katex-ignore` class on the element in question or use `v-text` or `v-html`.
+If using `{{foobar}}` instead of `v-text` or `v-html` [KaTeX](https://katex.org/) will probably cause this part of the template to never update. Some publications use KaTex for latex rendering. To avoid these issues put `js-katex-ignore` class on the element in question or use `v-text` or `v-html`. `js-katex-ignore` is on component root element by default, but remove it if component is expected to receive config from Authoring which could contain latex.
