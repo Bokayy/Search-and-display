@@ -4,11 +4,13 @@ module.exports = {
   transpileDependencies: ['pk-components-common'],
   filenameHashing: false, // disable hashes in filenames
   pages: {
-    app: {
-      entry: 'src/izzi.js'
+    standalone: {
+      entry: 'src/main.js', // used for development and standalone build
+      filename: 'index.html'
     },
-    external: {
-      entry: 'src/external.js'
+    app: {
+      entry: 'src/izzi.js', // used for IZZI build to be used in Shell
+      filename: 'app.html'
     }
   },
   chainWebpack: config => {
@@ -68,7 +70,7 @@ module.exports = {
       .use(require('wrapper-webpack-plugin'), [{
         test: /\.js$/, // only wrap output of bundle files with '.js' extension 
         // header: fileContent,
-        footer: 'Vue.component(\'pkc-name\', window[\'pkc-config\'])'
+        footer: 'Vue.component(\'pkc-name\', window[\'pkc-name\'])' // append component registration line to end of webpack bundle
       }]);
 
   }

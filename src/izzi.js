@@ -1,15 +1,12 @@
 /**
- * Not importing Vue, it is already available on IZZI platform
+ * This is used for creating app.css and app.js which are to be used in Shell
  */
-// if (!process.env.VUE_APP_TARGET == 'izzi') {
-// }
 
 import App from './App.vue';
-
 Vue.config.productionTip = false;
 
 if (!window.Vue) {
   window.Vue = Vue;
 }
 
-window['pkc-config'] = App;
+window['pkc-name'] = App;

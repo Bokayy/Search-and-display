@@ -6,55 +6,37 @@ Scaffold for creating components used in IZZI authoring tool
 npm install
 ```
 
-## Before you begin
-Find `pkc-name` in files and replace with your desired component name.
-
-Find `pkc-config` in files and replace with your desired component name prefixed with `pkc-`. We do this to avoid naming collisions because config for each component is saved to global window object in `main.js`.
-
-Example component name: `drago`
-Example config name: `pkc-drago`
-
 ### Compiles and hot-reloads for development
 ```
 npm run dev
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for production. Produces IZZI build, and standalone build.
 ```
 npm run build
 ```
 
+## Before you begin
+Find `pkc-name` in files and replace with your desired component name, always keep `pkc-` prefix in component name to avoid naming collisions.
+
+## How this works
+
+### IZZI build (default)
+After building component configuration is saved to `window['pkc-name']`, and that object is used to register global Vue component. Component registration part is found at the bottom of `vue.config.js`. It gets appended to finished webpack bundle.
+Vue is not included in default build (configured in `main.js`), it is available in Shell, and included in `index.html` so we never import it.
+
+### Standalone build
+Some components are available in Shell, we might need them in our component, eg. `pkc-video-player` but we do not want them included in the final bundle. Import such components in `main.js` and register as global Vue components. Do not import them in `izzi.js`. `dist/standalone.js` will include these components and that bundle can be used outside of Shell.
+
+## Avoiding side effects. Read carefully!
+* Always nest all component styles under one main selector which matches `.pkc-name` to avoid global CSS scope pollution.
+* Never use ids, or generate unique ids using Vue components UID.
+* Any DOM querying should always be scoped to components element (`this.$el`), never use `document.querySelector`. Alternatively assign unique ID to component using Vue components UID and then query using descendant selector.
 
 ## CSS and HTML Coding standards
-All class names should be written with [BEM](http://getbem.com/introduction/) principles in mind.
-
-Basic examples of usage:
-
-### Block
-`.site-header`
-
-### Element
-`.site-header__nav`
-
-### Modifier
-`.site-header--scrolled`
-
-* `-` is used as a generic separator in block, element and modifier names
-* `__` is used to separate ONLY element from block name
-* `--` is used to separate ONLY modifier from base class
-* Use of ids as styling and interaction hooks is strictly forbidden!
-* Avoid compounding classes, e.g. this is BAD `.site-header.site-header--scrolled`, just use `.site-header--scrolled`.
-* Nest all component styles under a single selector which matches component name. This isolates components CSS from the rest of the system.
-* Do not abuse nesting selectors just because SCSS allows it. It increases selector specificity and defeats the purpose of using BEM.
-* Avoid element selectors!
-* Every selector should be written on its own line
-* Always leave a space after selector declaration and `{` e.g. this is BAD `.foo{`,  this is GOOD `.foo {`
+* All class names should be written with [BEM](http://getbem.com/introduction/) principles in mind.
 * Always use only English words for naming, also for code comments, this is an international product
 * Avoid using Vue scoped styles as much as possible. We prefer our CSS to compile to separate file.
-
-### Avoiding side effects
-* All component styles should be nested under one main selector, usually `.pkc-name` (component name) to avoid affecting anything else on the Platform.
-* Any DOM querying should always be scoped to components element (`this.$el`), never use `document.querySelector`. Alternatively assign unique ID to component using Vue components UID and then query using descendant selector.
 
 ## Useful knowledge
 

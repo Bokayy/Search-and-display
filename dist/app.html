@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/favicon.ico><title>pkc-name</title><link rel=stylesheet type=text/css href=https://api.izzi.hr/profil/dist/izzi/css/style.css><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet><script src=https://cdn.jsdelivr.net/npm/vue/dist/vue.js></script><script src=https://unpkg.com/vue-i18n@8.8.1/dist/vue-i18n.js></script><script>// translations for common components. available on platform
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>pkc-name</title><link rel=stylesheet type=text/css href=https://api.izzi.hr/profil/dist/izzi/css/style.css><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet><script src=https://unpkg.com/vue@2.6.10/dist/vue.js></script><script src=https://unpkg.com/vue-i18n@8.8.1/dist/vue-i18n.js></script><script>// translations for common components. available on platform
       // you should never need to edit this
       window['pkc-locales'] = {
         "hr": {
@@ -87,8 +87,7 @@
         }
       }
       // /translations for common components
-      
-      Vue.component('pkc-name', window['pkc-config'])
+      Vue.component('pkc-name', window['pkc-name'])
 
       document.addEventListener('DOMContentLoaded', () => {
         var i18n = new VueI18n({

@@ -2,7 +2,8 @@
   <div class="int js-katex-ignore pkc-name">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{$t('pk-component.hello')}}</h1>
-    <h2>wf</h2>
+
+    <!-- <video-player src="video.mp4"></video-player> -->
   </div>
 </template>
 
