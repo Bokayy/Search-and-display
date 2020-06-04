@@ -1,5 +1,5 @@
 <template>
-  <div class="int js-katex-ignore pkc-name">
+  <div class="int js-katex-ignore pkc-name" :class="elClass">
     <int-header 
       :title="conf.title" 
       :description="conf.description"
@@ -61,9 +61,9 @@ export default {
         supported: false,
         text: 'Instructions how to use'
       },
-      fullscreenSupported: false,
+      fullscreenSupported: true,
       fullscreenMandatory: false,
-      hasSplash: true,
+      hasSplash: false,
       conf: {
         title: '',
         description: '',
@@ -71,6 +71,13 @@ export default {
       },
       isSolved: false
     };
+  },
+  computed: {
+    elClass() {
+      return {
+        ...this.commonElClass
+      };
+    }
   },
   methods: {
     /** 
