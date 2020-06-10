@@ -1,11 +1,7 @@
-/**
- * Make sure to import only languages used, and delete other imports and files 
- * so we can easily check which components need translations in Authoring tool
- */
-import hr from './translations/hr.js';
-import en from './translations/en.js';
-import bg from './translations/bg.js';
-import sr from './translations/sr.js';
+import hr from './translations/hr.json';
+import en from './translations/en.json';
+import bg from './translations/bg.json';
+import sr from './translations/sr.json';
 
 export default 
 {

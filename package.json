@@ -4,12 +4,13 @@
   "keywords": [
     "izzi"
   ],
+  "languages": ["hr", "en", "bg", "sr"],
   "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build && npm run translations",
-    "translations": "json-dir-listing ./src/translations -o translations.json && move-file ./src/translations/translations.json ./dist/translations.json",
+    "translations": "cpy ./src/translations/en.json dist --rename=translations.json",
     "post-build": "unset GIT_DIR && cd dist && git add *.* && git add js/* && git add css/*"
   },
   "dependencies": {
@@ -22,12 +23,11 @@
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-service": "^3.4.0",
+    "cpy-cli": "^3.1.1",
     "fibers": "^3.1.1",
-    "json-dir-listing": "^0.2.1",
     "pre-commit": "^1.2.2",
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
-    "move-file-cli": "^1.0.0",
     "vue-template-compiler": "^2.6.11",
     "wrapper-webpack-plugin": "^2.1.0"
   },

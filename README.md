@@ -97,9 +97,9 @@ If you need to import CSS from `node_modules` into SCSS, prefix the path with `~
 
 ### Localisation
 Localisation is done with https://kazupon.github.io/vue-i18n/ and uses https://github.com/kazupon/vue-i18n-loader
-Check out `src/translations` for examples. Currently we support Croatia, English, Bulgarian and Serbian.
+Check out `src/translations` for examples. Currently we support Croatian, English, Bulgarian and Serbian.
 
-__Delete translations for languages we still do not have and remove imports from `messages.js`.__
+__Make sure to update languages keys in package.json with translated languages so we can easily find untranslated components in Authoring tool__
 
 ### Deploying
 `pre-commit` git hook will run and build the project. You can avoid this by using `git commit -n` but only do this if you've not changed src files or you've run `npm run build` yourself, otherwise latest version will not be deployed after push.
