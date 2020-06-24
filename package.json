@@ -9,8 +9,7 @@
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build && npm run translations",
-    "translations": "cpy ./src/translations/en.json dist --rename=translations.json",
+    "build": "vue-cli-service build",
     "post-build": "unset GIT_DIR && cd dist && git add *.* && git add js/* && git add css/*"
   },
   "dependencies": {
