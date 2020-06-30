@@ -1,7 +1,7 @@
 module.exports = {
   runtimeCompiler: true,
   productionSourceMap: false,
-  transpileDependencies: ['pk-components-common'],
+  transpileDependencies: ['pkc-common'],
   filenameHashing: false, // disable hashes in filenames
   pages: {
     standalone: {
