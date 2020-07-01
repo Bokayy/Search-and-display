@@ -103,7 +103,7 @@
       // /translations for common components
       Vue.component('pkc-name', window['pkc-name'])
 
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', function() {
         var i18n = new VueI18n({
           locale: 'hr', // set locale
           messages: window['pkc-locales']
