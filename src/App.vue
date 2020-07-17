@@ -35,7 +35,6 @@
 <script>
 import configLoader from '../node_modules/pkc-common/mixins/config-loader.js';
 import commonToggles from '../node_modules/pkc-common/mixins/common-toggles.js';
-import scorer from '../node_modules/pkc-common/mixins/scorer.js';
 import analytics from '../node_modules/pkc-common/mixins/analytics.js';
 import IntHeader from '../node_modules/pkc-common/components/int-header.vue';
 import IntFooter from '../node_modules/pkc-common/components/int-footer.vue';
@@ -43,10 +42,11 @@ import messages from './messages.js';
 
 export default {
   name: 'pkc-name',
-  mixins: [configLoader, commonToggles, scorer, analytics],
+  mixins: [configLoader, commonToggles, analytics],
   props: {
     'config': Object,
-    'block-id': String
+    'block-id': String,
+    'difficulty': String
   },
   i18n: {
     messages: messages,
