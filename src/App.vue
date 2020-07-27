@@ -45,8 +45,7 @@ export default {
   mixins: [configLoader, commonToggles, analytics],
   props: {
     'config': Object,
-    'block-id': String,
-    'difficulty': String
+    'block-id': String
   },
   i18n: {
     messages: messages,
