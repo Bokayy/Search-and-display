@@ -1,23 +1,15 @@
 {
   "name": "pkc-name",
-  "author": "Mladen Panic <mladen.panic@profil-klett.hr>",
-  "keywords": [
-    "izzi"
-  ],
-  "languages": [
-    "hr",
-    "en",
-    "bg",
-    "sr"
-  ],
   "version": "0.2.0",
   "private": true,
+  "author": "Mladen Panic <mladen.panic@profil-klett.hr>",
   "scripts": {
-    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build && cpy src/translations/en.json dist --rename=translations.json",
+    "dev": "vue-cli-service serve",
     "post-build": "unset GIT_DIR && cd dist && git add *.* && git add js/* && git add css/*"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "pkc-common": "git+ssh://git@github.com/profil-klett/pkc-common.git",
@@ -25,8 +17,8 @@
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.3.0",
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
     "cpy-cli": "^3.1.1",
     "fibers": "^5.0.0",
     "pre-commit": "^1.2.2",
@@ -43,6 +35,15 @@
   "browserslist": [
     "> 1%",
     "ie 11-12"
+  ],
+  "keywords": [
+    "izzi"
+  ],
+  "languages": [
+    "hr",
+    "en",
+    "bg",
+    "sr"
   ],
   "pre-commit": [
     "build",
