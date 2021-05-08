@@ -9,22 +9,21 @@
     "post-build": "unset GIT_DIR && cd dist && git add *.* && git add js/* && git add css/*"
   },
   "dependencies": {
-    "@babel/plugin-proposal-optional-chaining": "^7.12.17",
     "core-js": "^3.6.5",
     "pkc-common": "git+ssh://git@github.com/profil-klett/pkc-common.git",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^4.5.11",
     "@vue/cli-service": "^4.5.11",
     "cpy-cli": "^3.1.1",
     "eslint": "^7.20.0",
     "eslint-plugin-vue": "^7.6.0",
-    "fibers": "^5.0.0",
     "pre-commit": "^1.2.2",
     "sass": "^1.16.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.11",
     "wrapper-webpack-plugin": "^2.1.0"
   },
@@ -49,5 +48,9 @@
   "pre-commit": [
     "build",
     "post-build"
-  ]
+  ],
+  "engines": {
+    "node": ">=12",
+    "npm": "^7.0.0"
+  }
 }
