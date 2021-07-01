@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "pkc-common": "git+ssh://git@github.com/profil-klett/pkc-common.git",
+    "pkc-common": "github:profil-klett/pkc-common",
     "vue": "^2.6.11"
   },
   "devDependencies": {
