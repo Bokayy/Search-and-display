@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "pkc-common": "github:profil-klett/pkc-common",
-    "vue": "^2.6.11"
+    "vue": "2.6.14"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.13.12",
@@ -24,7 +24,7 @@
     "pre-commit": "^1.2.2",
     "sass": "^1.16.0",
     "sass-loader": "^10.1.1",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "2.6.14",
     "wrapper-webpack-plugin": "^2.1.0"
   },
   "postcss": {
