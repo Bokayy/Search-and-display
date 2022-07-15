@@ -1,3 +1,4 @@
+<!-- eslint-disable brace-style -->
 [<template>
   <div class="int js-katex-ignore pkc-search-and-display" :class="elClass">
     <int-header 
@@ -99,10 +100,30 @@ export default {
   methods: {
     search: function() {
       //console.log(this.inputTextFetch);
-      console.log(cities[0].city);
-      this.RenderTable.cities[0] = cities.filter(data => data.city===this.inputTextFetch);
-      console.log(this.RenderTable);
-      console.log(this.RenderTable.cities[0]);
+      //console.log(cities[0].city);
+      //this.RenderTable.cities[0]
+      //let throwaway1= cities.filter(data => data.city===this.inputTextFetch);
+      /* //console.log(cities.filter(data => data.city===this.inputTextFetch));
+      throwaway1 = JSON.stringify(throwaway1);
+      console.log(throwaway1); */
+      for (let i = 0; i < cities.length; i++){
+        /*if(cities[i].city.includes(this.inputTextFetch)){
+          this.RenderTable.cities[i] = cities[i].city; 
+        }
+         else{
+          alert('city not found!');
+          break;
+        } */
+        if(cities[i].state.includes(this.inputTextFetch)){
+          this.RenderTable.states[i] = cities[i].state;
+        }
+        else{
+          alert('state not found!');
+        }
+        break;
+      }
+      /* let citiesTemp = cities.find(o => o.city === this.inputTextFetch);
+      console.log(citiesTemp.city); */
     }
   },
   created() {
