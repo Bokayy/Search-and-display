@@ -5,8 +5,8 @@ import sr from './translations/sr.json';
 
 export default 
 {
-  'hr': { 'pkc-name': hr },
-  'en': { 'pkc-name': en },
-  'bg': { 'pkc-name': bg },
-  'sr': { 'pkc-name': sr },
+  'hr': { 'pkc-search-and-display': hr },
+  'en': { 'pkc-search-and-display': en },
+  'bg': { 'pkc-search-and-display': bg },
+  'sr': { 'pkc-search-and-display': sr },
 };

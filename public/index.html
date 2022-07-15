@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>pkc-name</title>
+    <title>pkc-search-and-display</title>
     <link rel="stylesheet" type="text/css" href="https://api.izzi.digital/profil/dist/izzi/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
@@ -101,7 +101,7 @@
         }
       }
       // /translations for common components
-      Vue.component('pkc-name', window['pkc-name'])
+      Vue.component('pkc-search-and-display', window['pkc-search-and-display'])
 
       document.addEventListener('DOMContentLoaded', function() {
         var i18n = new VueI18n({
@@ -135,12 +135,11 @@
                       config prop must always have this minimum structure.
                       Some components don't neeed config prop at all.
                     -->
-                    <pkc-name block-id="666" :config='{
+                    <pkc-search-and-display block-id="666" :config='{
                       "config": {
-                        "title": "Example title",
-                        "description": "Some text can be here"
+                        "title": "Top 1000 cities in America",
                       }
-                    }'></pkc-name>
+                    }'></pkc-search-and-display>
 
                   </div>
 

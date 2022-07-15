@@ -15,4 +15,4 @@ if (!window.Vue) {
   window.Vue = Vue;
 }
 
-window['pkc-name'] = App;
+window['pkc-search-and-display'] = App;

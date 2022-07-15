@@ -17,14 +17,14 @@ npm run build
 ```
 
 ## Before you begin
-* Find `pkc-name` in files and replace with your desired component name, always keep `pkc-` prefix in component name to avoid naming collisions.
+* Find `pkc-search-and-display` in files and replace with your desired component name, always keep `pkc-` prefix in component name to avoid naming collisions.
 * Update author field in package.json. 
 * Enter project name for which this component is developed in keywords in package.json. We want to keep track of components created for IZZI, Carnet, PYP etc...
 
 ## How this works
 
 ### IZZI build (default)
-After building component configuration is saved to `window['pkc-name']`, and that object is used to register global Vue component. Component registration part is found at the bottom of `vue.config.js`. It gets appended to finished webpack bundle.
+After building component configuration is saved to `window['pkc-search-and-display']`, and that object is used to register global Vue component. Component registration part is found at the bottom of `vue.config.js`. It gets appended to finished webpack bundle.
 Vue is not included in default build (configured in `main.js`), it is available in Shell, and included in `index.html` so we never import it.
 
 ### Standalone build
@@ -40,7 +40,7 @@ Other possible dependencies include:
 ```
 
 ## Avoiding side effects. Read carefully!
-* Always nest all component styles under one main selector which matches `.pkc-name` to avoid global CSS scope pollution.
+* Always nest all component styles under one main selector which matches `.pkc-search-and-display` to avoid global CSS scope pollution.
 * Never use ids, or generate unique ids using Vue components UID.
 * Any DOM querying should always be scoped to components element (`this.$el`), never use `document.querySelector`. Alternatively assign unique ID to component using Vue components UID and then query using descendant selector.
 
@@ -61,7 +61,7 @@ Most components should have the following structure to display properly in fulls
 <int-footer></int-footer>
 ```
 
-Root component element should have mandatory classes `int` and `pkc-name`. Also `common-toggles.js` mixin contains `commonElClass` computed prop which provides classes for fullscreen toggling and splash screen toggling. This is mandatory.
+Root component element should have mandatory classes `int` and `pkc-search-and-display`. Also `common-toggles.js` mixin contains `commonElClass` computed prop which provides classes for fullscreen toggling and splash screen toggling. This is mandatory.
 
 ### Dark mode
 Dark mode is enabled on platform via `dark-mode` class on `body`. Make sure to test component in such situation. Use colors defined in `_variables.scss` in `pkc-common`, namely: `$black`, `$off-black`, `$border-black`. These should be enough to make the component darker.

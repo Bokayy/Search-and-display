@@ -70,7 +70,7 @@ module.exports = {
       .use(require('wrapper-webpack-plugin'), [{
         test: /\.js$/, // only wrap output of bundle files with '.js' extension 
         // header: fileContent,
-        footer: 'Vue.component(\'pkc-name\', window[\'pkc-name\'])' // append component registration line to end of webpack bundle
+        footer: 'Vue.component(\'pkc-search-and-display\', window[\'pkc-search-and-display\'])' // append component registration line to end of webpack bundle
       }]);
 
   }

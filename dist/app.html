@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>pkc-name</title><link rel="stylesheet" type="text/css" href="https://api.izzi.digital/profil/dist/izzi/css/style.css"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script><script src="https://unpkg.com/vue-i18n@8.8.1/dist/vue-i18n.js"></script><script>dosData = {}
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>pkc-search-and-display</title><link rel="stylesheet" type="text/css" href="https://api.izzi.digital/profil/dist/izzi/css/style.css"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script><script src="https://unpkg.com/vue-i18n@8.8.1/dist/vue-i18n.js"></script><script>dosData = {}
       // translations for common components. available on platform
       // you should never need to edit this
       window['pkc-locales'] = {
@@ -88,7 +88,7 @@
         }
       }
       // /translations for common components
-      Vue.component('pkc-name', window['pkc-name'])
+      Vue.component('pkc-search-and-display', window['pkc-search-and-display'])
 
       document.addEventListener('DOMContentLoaded', function() {
         var i18n = new VueI18n({
@@ -103,9 +103,9 @@
           },
           i18n: i18n
         })
-      })</script><link href="/css/app.css" rel="preload" as="style"><link href="/js/app.js" rel="preload" as="script"><link href="/css/app.css" rel="stylesheet"></head><body><div class="site-wrapper"><section id="main" class="tpl-jedinica tpl-dos"><div class="content-x"><div class="container"><div class="row"><div class="col-12"><div class="app-wrap block-layout--default"><div id="app-wrap"><pkc-name block-id="666" :config='{
+      })</script><link href="/css/app.css" rel="preload" as="style"><link href="/js/app.js" rel="preload" as="script"><link href="/css/app.css" rel="stylesheet"></head><body><div class="site-wrapper"><section id="main" class="tpl-jedinica tpl-dos"><div class="content-x"><div class="container"><div class="row"><div class="col-12"><div class="app-wrap block-layout--default"><div id="app-wrap"><pkc-search-and-display block-id="666" :config='{
                       "config": {
                         "title": "Example title",
                         "description": "Some text can be here"
                       }
-                    }'></pkc-name></div></div></div></div></div></div></section></div><script src="/js/app.js"></script></body></html>
+                    }'></pkc-search-and-display></div></div></div></div></div></div></section></div><script src="/js/app.js"></script></body></html>
