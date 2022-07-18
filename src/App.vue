@@ -34,7 +34,7 @@
                 <tr v-for="(item, index) in RenderTable
                 " v-bind:key="item" class="pkc-search-and-display">
                   <td>{{ index }}</td>
-                  <td>{{item.city}}</td> 
+                  <td>{{ item.city }}</td> 
                    <td>{{ item.state }}</td>
                    <td>{{ item.population }}</td>
                 </tr>
@@ -104,6 +104,17 @@ export default {
           dittoRenderTable.push(input);
         }
       });
+      if(this.RenderTable.length > 1){
+        this.RenderTable.sort(function(a, b){
+          //a and be are the objects inside of the cities array
+          console.log(a, b);
+          //i don't know why this works, but it works.
+          //my theory is that return 1 gives precedence to the first
+          //parameter, and a negative -1 gives precedence to the
+          //second parameter
+          return b.population - a.population;
+        });
+      }
       console.log(dittoRenderTable);
     }
   },
