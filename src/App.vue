@@ -80,16 +80,40 @@ export default {
       //my variables,
       cityText: 'Texas',
       stateText: 'Dallas',
-      RenderTable: [],
-      inputText: '',
+      RenderTable: [
+
+      ],
+      inputText: 'Houston',
     };
   },
   methods: {
     search: function() {
-      this.RenderTable=(cities.filter(o => o.state === this.inputTextFetch));
-      /* if (cities[i].state.includes(this.inputTextFetch)){
-        console.log(cities[i].state);
+      //Reset Table for each new Search
+      this.RenderTableFetch.length = 0;
+      //i suck at javascript
+      const thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeFromFind = this.inputTextFetch;
+      const dittoRenderTable = this.RenderTable;
+      //find searches through my array of objects without me having to write a for loop
+      this.citiesFetch.find(function(input) {
+        //check if city or state
+        if(input.state === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeFromFind || input.city === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeFromFind){
+          //i tried to use RenderTable[i] = this.city or whatever, and just got a bunch of undefineds
+          dittoRenderTable.push(input);
+          console.log(dittoRenderTable);
+        }
+      /*         if(input.city === this.inputTextFetch){
+          console.log(input.city);
+        } */
+      });
+
+      //if(this.citiesFetch.includes(this.inputTextFetch));
+      //console.log(this.citiesFetch.filter(o => o.city === this.inputTextFetch);
+      /*       for (let i = 0; i <= (cities.length-1); i++) {
+        if(this.citiesFetch[i].city === (this.inputTextFetch)){
+          this.RenderTableFetch.push((this.citiesFetch[i]));
+        }
       } */
+      //console.log(this.RenderTableFetch);
     }
   },
   created() {
@@ -98,6 +122,12 @@ export default {
   computed: {
     inputTextFetch: function() {
       return this.inputText;
+    },
+    citiesFetch: function() {
+      return Array.from(cities);
+    },
+    RenderTableFetch: function() {
+      return this.RenderTable;
     },
     elClass() {
       return {
