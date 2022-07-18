@@ -31,10 +31,13 @@
               <td>Population</td>
             </th>
               <tr>
-                <!-- <tr v-for="(item) in RenderTable.cities" v-bind:key="item" class="pkc-search-and-display">
-                  {{ item }}
-                </tr> -->
-                <!-- <tr>1</tr> -->
+                <tr v-for="(item, index) in RenderTable
+                " v-bind:key="item" class="pkc-search-and-display">
+                  <td>{{ index }}</td>
+                  <td>{{item.city}}</td> 
+                   <td>{{ item.state }}</td>
+                   <td>{{ item.population }}</td>
+                </tr>
               </tr>
           </table>
         </div>
@@ -99,21 +102,9 @@ export default {
         if(input.state === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeOfFind || input.city === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeOfFind){
           //i tried to use RenderTable[i] = this.city or whatever, and just got a bunch of undefineds
           dittoRenderTable.push(input);
-          console.log(dittoRenderTable);
         }
-      /*         if(input.city === this.inputTextFetch){
-          console.log(input.city);
-        } */
       });
-
-      //if(this.citiesFetch.includes(this.inputTextFetch));
-      //console.log(this.citiesFetch.filter(o => o.city === this.inputTextFetch);
-      /*       for (let i = 0; i <= (cities.length-1); i++) {
-        if(this.citiesFetch[i].city === (this.inputTextFetch)){
-          this.RenderTableFetch.push((this.citiesFetch[i]));
-        }
-      } */
-      //console.log(this.RenderTableFetch);
+      console.log(dittoRenderTable);
     }
   },
   created() {
