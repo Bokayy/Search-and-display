@@ -91,12 +91,12 @@ export default {
       //Reset Table for each new Search
       this.RenderTableFetch.length = 0;
       //i suck at javascript
-      const thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeFromFind = this.inputTextFetch;
+      const thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeOfFind = this.inputTextFetch;
       const dittoRenderTable = this.RenderTable;
       //find searches through my array of objects without me having to write a for loop
       this.citiesFetch.find(function(input) {
         //check if city or state
-        if(input.state === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeFromFind || input.city === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeFromFind){
+        if(input.state === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeOfFind || input.city === thisNeedsToBeHereBecauseinputTextFetchIsOutOfScopeOfFind){
           //i tried to use RenderTable[i] = this.city or whatever, and just got a bunch of undefineds
           dittoRenderTable.push(input);
           console.log(dittoRenderTable);
