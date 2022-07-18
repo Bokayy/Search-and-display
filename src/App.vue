@@ -18,8 +18,8 @@
         </div>
 
         <div class="pkc-search-and-display__labels-wrapper">
-          <div>Cities found: {{ this.cityText }}</div>
-          <div>States found: {{ this.stateText }}</div>
+          <div class="placeholder">Cities found: {{ this.cityText }}</div>
+          <div class="placeholder">States found: {{ this.stateText }}</div>
         </div>
 
         <div class="pkc-search-and-display__results-wrapper">
@@ -78,8 +78,8 @@ export default {
       },
       isSolved: false,
       //my variables,
-      cityText: 'Texas',
-      stateText: 'Dallas',
+      cityText: '(placeholder)Texas',
+      stateText: '(placeholder)Dallas',
       RenderTable: [
 
       ],
@@ -166,6 +166,11 @@ export default {
     display: flex;
     justify-content: space-around;
     margin: 30px 0;
+
+    .placeholder{
+      background-color: lightblue;
+      border-radius: 1rem;
+    }
   }
 
   .pkc-search-and-display__table {
