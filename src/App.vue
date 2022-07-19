@@ -81,12 +81,10 @@ export default {
       },
       isSolved: false,
       //my variables,
-      cityText: '(placeholder)Texas',
-      stateText: '(placeholder)Dallas',
       RenderTable: [
 
       ],
-      inputText: 'Houston',
+      inputText: 'Texas',
     };
   },
   methods: {
@@ -130,6 +128,30 @@ export default {
     },
     RenderTableFetch: function() {
       return this.RenderTable;
+    },
+    cityText: function() {
+      let citiesNo= 0;
+      this.RenderTable.forEach(el =>{
+        if (el.city != null || el.city != undefined) {
+          citiesNo++;
+        }
+      });
+      return citiesNo;
+    },
+    stateText: function() {
+      let uniqueStates= {};
+      this.RenderTable.forEach(el=>{
+        if(Object.hasOwn(uniqueStates, el.state)) {
+          uniqueStates[el.state] + 1;
+        }
+        else{
+          uniqueStates[el.state] = 1;
+        }
+      });
+      console.log(uniqueStates);
+      return Object.values(uniqueStates).reduce((acumulator, value) => {
+        return acumulator + value;
+      }, 0);
     },
     elClass() {
       return {
